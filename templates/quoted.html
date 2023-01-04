@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2>{{ stockDict["name"] }} ({{ stockDict["symbol"] }}) is valued at {{ stockDict["price"] | usd }} per share.</h2>
+{% endblock %}

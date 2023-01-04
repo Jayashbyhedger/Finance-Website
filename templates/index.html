@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div class="section">
+    <h1>Welcome Back {{ name }}!</h1>
+    <table class="table table-striped" style="width: 90%; margin: 5%">
+        <thead>
+            <tr class="border-0">
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through the userStocks to display stock information in this table -->
+            {% for stock in userStocks %}
+            <tr>
+                <td>{{ stock.stock }}</td>
+                <td>{{ stock.name }}</td>
+                <td>{{ stock.quantity }}</td>
+                <td>{{ stock.price }}</td>
+                <td>{{ stock.total }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-center" colspan="3"></td>
+                <td class="border-0 fw-bold text-center">Cash</td>
+                <td class="border-0 text-center">{{ userCash }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="3"></td>
+                <td class="border-0 fw-bold text-center">TOTAL</td>
+                <td class="border-0 w-bold text-center">{{ grandTotal }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% endblock %}

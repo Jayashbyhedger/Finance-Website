@@ -204,7 +204,6 @@ def quote():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-        #TODO
 
         # Ensure stock was entered
         if not request.form.get("symbol"):
